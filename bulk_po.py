@@ -15,16 +15,16 @@ KKMT_API_KEY = os.environ.get("KKMT_API_KEY")
  
 PO_LIST = [
     {
-    "type": "Xwire",
-    "amount": 11111,
+    "type": "wire",
+    "amount": 1111,
     "direction": "credit",
     "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
     "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
-    "statement_descriptor": "Distribution for fund 123",
+    "statement_descriptor": "Distribution for fund 123"
     },
     {
-    "type": "Xwire",
-    "amount": 22222,
+    "type": "wire",
+    "amount": 2222,
     "direction": "credit",
     "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
     "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
