@@ -1,0 +1,42 @@
+[
+    {
+      "type": "wire",
+      "amount": 1111,
+      "direction": "credit",
+      "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
+      "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
+      "statement_descriptor": "Distribution for fund 123"
+    },
+    {
+      "type": "wire",
+      "amount": 2222,
+      "direction": "credit",
+      "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
+      "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
+      "statement_descriptor": "Distribution for fund 123"
+    },
+    {
+      "type": "wire",
+      "amount": 3333,
+      "direction": "credit",
+      "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
+      "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
+      "statement_descriptor": "Distribution for fund 123"
+    },
+    {
+      "type": "wire",
+      "amount": 4444,
+      "direction": "credit",
+      "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
+      "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
+      "statement_descriptor": "Distribution for fund 123"
+    },
+    {
+      "type": "wire",
+      "amount": 5555,
+      "direction": "credit",
+      "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
+      "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
+      "statement_descriptor": "Distribution for fund 123"
+    }
+]
