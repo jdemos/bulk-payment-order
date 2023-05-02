@@ -8,27 +8,34 @@
 import requests
 import json
 import sys
-import os    
+import os
+import uuid  
 
-KKMT_ORG_ID = os.environ.get("KKMT_ORG_ID")
-KKMT_API_KEY = os.environ.get("KKMT_API_KEY")
+ORG_ID = os.environ.get("MY_ORG_ID")
+API_KEY = os.environ.get("MY_API_KEY")
  
 PO_LIST = [
     {
-    "type": "wire",
-    "amount": 1111,
-    "direction": "credit",
-    "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
-    "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
-    "statement_descriptor": "Distribution for fund 123"
+    "type": "ach",
+    "amount": 960,
+    "direction": "debit",
+    "receiving_account_id": "a069dd3e-ff35-461e-b8e4-32328548c861",
+    "originating_account_id": "172e4b92-126e-4175-a824-a3ad7107b8a3",
+    "description": "SHIP-LABEL",
+    "metadata": {
+        "Customer ID": "123"
+        }
     },
     {
-    "type": "wire",
-    "amount": 2222,
-    "direction": "credit",
-    "originating_account_id": "9837ebf3-46fe-4afd-814a-78cd82fe82e2",
-    "receiving_account_id": "6c153e0c-e890-4414-829c-b9880a19c245",
-    "statement_descriptor": "Distribution for fund 123",
+    "type": "ach",
+    "amount": 970,
+    "direction": "debit",
+    "receiving_account_id": "a10129c4-2c26-480a-92a0-6499264f498e",
+    "originating_account_id": "172e4b92-126e-4175-a824-a3ad7107b8a3",
+    "description": "SHIP-LABEL",
+    "metadata": {
+        "Customer ID": "456"
+        }
     }
 ]
  
@@ -41,9 +48,10 @@ def main():
         payment_orders = PO_LIST
 
     for payment in payment_orders:
-        response = create_po(payment, KKMT_ORG_ID, KKMT_API_KEY)
-        print(response.status_code)
-        print(response.json())
+        response = create_po(payment, ORG_ID, API_KEY)
+        print(f'Response: {response.status_code}')
+        json_resp = response.json()
+        print(f'--> {json_resp["type"].upper()} {json_resp["direction"].upper()} for {"${:,.2f}".format(json_resp["amount"]/100)}','\n')
 
 
 def async_create_po(payload, org_id, api_key):
